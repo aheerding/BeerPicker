@@ -1,4 +1,4 @@
-[{
+data = [{
     "id": "careAboutTaste",
     "text": "Is taste a factor?",
     "prevNode": null,

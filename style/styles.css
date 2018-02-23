@@ -1,0 +1,16 @@
+body {
+  background-color: #EFF1ED;
+  margin: 0;
+}
+
+#header {
+  background-color: #FCD7AD;
+  margin: 0;
+  text-align: center;
+  width: 100%;
+  height: 5rem;
+}
+
+h1{
+  margin: 0;
+}
