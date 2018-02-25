@@ -4,7 +4,7 @@ function getNext(selectId, id){
   var next;
   if(selectId === 'begin'){
     next = data[0];
-  } else {
+  } else if(id != 'blank'){
     //get the id for the next node
     let nextId;
     for (let i = 0; i < data.length; i++) {
@@ -21,15 +21,18 @@ function getNext(selectId, id){
       }
     }
   }
-  //console.log(next);
+  //console.log(selectId);
   removeChildren(selectId);
-  createDiv(next);
+  //console.log(next);
+  if(next != undefined){
+      createDiv(next);
+  }
 }
 
 //creates the select based off of the passed in data
 //params - the object to render from data.js
 function createDiv(next) {
-  let header = document.createElement('h2');
+  let header = document.createElement('h3');
   header.setAttribute('class', next.id);
   header.appendChild(document.createTextNode(next.text));
   document.getElementById('body').appendChild(header);
@@ -38,7 +41,7 @@ function createDiv(next) {
     select.setAttribute('id', next.id);
     let def = document.createElement('option');
     def.appendChild(document.createTextNode('-------------'));
-    def.setAttribute('value', null);
+    def.setAttribute('value', 'blank');
     select.appendChild(def);
     for (let i = 0; i < next.options.length; i++) {
       let option = document.createElement('option');
@@ -54,15 +57,14 @@ function createDiv(next) {
 function removeChildren(selectId){
   //get array of all nodes in body
   var nodes = document.getElementById('body').childNodes;
-  var foundIt = false;
   //loop through backwards
   for(let i = nodes.length; i > 0; i--){
     if(i != nodes.length){
       //if the id doesn't match and we haven't reached the current node, remove
-      if(nodes[i].id != selectId && foundIt == false){
+      if(nodes[i].id != selectId){
         document.getElementById('body').removeChild(nodes[i]);
       } else {
-        foundIt = true;
+        break;
       }
     }
   }

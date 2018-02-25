@@ -1,6 +1,16 @@
 body {
+  font-family: Roboto, sans-serif;
   background-color: #EFF1ED;
   margin: 0;
+}
+
+h1{
+  margin: 0;
+}
+
+h3{
+  margin-top: 1%;
+  margin-bottom: 1%;
 }
 
 #header {
@@ -11,6 +21,6 @@ body {
   height: 5rem;
 }
 
-h1{
-  margin: 0;
+#body{
+  margin-left: 2%;
 }

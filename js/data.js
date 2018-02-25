@@ -1,3 +1,5 @@
+//data created using the flowchart found at:
+//https://lifehacker.com/decide-what-style-of-beer-you-want-to-drink-with-this-f-1688552149
 data = [
   {
     "id": "start",
