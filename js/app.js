@@ -1,304 +1,10 @@
-data = [
-  {
-    "id": "start",
-    "text": "Is taste a factor?",
-    "prevNode": null,
-    "options": [
-      {
-        "text": "I want to enjoy my beer!",
-        "nextNode": "drinkOutside"
-      }, {
-        "text": "Nope I'm just trying to get nice and drunk",
-        "nextNode": "amerMacroLager"
-      }
-    ]
-  }, {
-    "id": "drinkOutside",
-    "text": "Are you drinking outside?",
-    "prevNode": "careAboutTaste",
-    "options": [
-      {
-        "text": "Yep!",
-        "nextNode": "hotOut"
-      }, {
-        "text": "Nope!",
-        "nextNode": "winterNight"
-      }
-    ]
-  }, {
-    "id": "amerMacroLager",
-    "text": "American Macro Lager",
-    "prevNode": "careAboutTaste",
-    "options": null
-  }, {
-    "id": "hotOut",
-    "text": "Is it hot outside?",
-    "prevNode": "drinkOutside",
-    "options": [
-      {
-        "text": "Pretty toasty out",
-        "nextNode": "funkyRefreshing"
-      }, {
-        "text": "Not really",
-        "nextNode": "running"
-      }
-    ]
-  }, {
-    "id": "winterNight",
-    "text": "Is it a cold winter night?",
-    "prevNode": "drinkOutside",
-    "options": [
-      {
-        "text": "Yep, there's snow and everything",
-        "nextNode": "getDrunk"
-      }, {
-        "text": "No, it's mild outside",
-        "nextNode": "coldHoppy"
-      }
-    ]
-  }, {
-    "id": "funkyRefreshing",
-    "text": "Would you prefer:",
-    "prevNode": "hotOut",
-    "options": [
-      {
-        "text": "Fun and funky",
-        "nextNode": "farmhouse"
-      }, {
-        "text": "Easy and refreshing",
-        "nextNode": "likeBitter"
-      }
-    ]
-  }, {
-    "id": "running",
-    "text": "Are you running around and being active?",
-    "prevNode": "hotOut",
-    "options": [
-      {
-        "text": "Yes",
-        "nextNode": "enjoyChallenge"
-      }, {
-        "text": "Nope, we're just chilling",
-        "nextNode": "eating"
-      }
-    ]
-  }, {
-    "id": "likeBitter",
-    "text": "Do you like your beer to be bitter and hoppy?",
-    "prevNode": "funkyRefreshing",
-    "options": [
-      {
-        "text": "I love bitter hops",
-        "nextNode": "pilsner"
-      }, {
-        "text": "Nope, not at all",
-        "nextNode": "wheatBeer"
-      }
-    ]
-  }, {
-    "id": "enjoyChallenge",
-    "text": "Do you like to be challenged?",
-    "prevNode": "running",
-    "options": [
-      {
-        "text": "Heck yeah I do!",
-        "nextNode": "farmhouse"
-      }, {
-        "text": "Nope, I'm taking it easy",
-        "nextNode": "pilsner"
-      }
-    ]
-  }, {
-    "id": "eating",
-    "text": "Are you eating food?",
-    "prevNode": "running",
-    "options": [
-      {
-        "text": "Yep",
-        "nextNode": "foodType"
-      }, {
-        "text": "Nope, just enjoying a drink",
-        "nextNode": "hoppy"
-      }
-    ]
-  }, {
-    "id": "foodType",
-    "text": "Light and easy food or heavy and satisfying?",
-    "prevNode": "eating",
-    "options": [
-      {
-        "text": "Light food",
-        "nextNode": "wheatBeer"
-      }, {
-        "text": "A hearty meal",
-        "nextNode": "mealDessert"
-      }
-    ]
-  }, {
-    "id": "mealDessert",
-    "text": "Is it a meal or dessert?",
-    "prevNode": "foodType",
-    "options": [
-      {
-        "text": "A meal",
-        "nextNode": "hoppyRoasty"
-      }, {
-        "text": "Some nice dessert",
-        "nextNode": "sour"
-      }
-    ]
-  }, {
-    "id": "hoppyRoasty",
-    "text": "Do you like a hoppier beer or one that is more roasty?",
-    "prevNode": "mealDessert",
-    "options": [
-      {
-        "text": "A hoppy beer!",
-        "nextNode": "ipa"
-      }, {
-        "text": "A roasty beer!",
-        "nextNode": "porterStout"
-      }
-    ]
-  }, {
-    "id": "hoppy",
-    "text": "Do you like hoppy beers?",
-    "prevNode": "eating",
-    "options": [
-      {
-        "text": "I love hops",
-        "nextNode": "paleAle"
-      }, {
-        "text": "No hops for me please",
-        "nextNode": "wheatBeer"
-      }
-    ]
-  }, {
-    "id": "getDrunk",
-    "text": "Are you trying to get drunk?",
-    "prevNode": "winterNight",
-    "options": [
-      {
-        "text": "Let's get sauced!",
-        "nextNode": "likeCoffee"
-      }, {
-        "text": "Nope, it's a easy night for me",
-        "nextNode": "porterStout"
-      }
-    ]
-  }, {
-    "id": "likeCoffee",
-    "text": "Do you love coffee?",
-    "prevNode": "getDrunk",
-    "options": [
-      {
-        "text": "I drink it every day",
-        "nextNode": "agedStout"
-      }, {
-        "text": "I'm not really a coffee person",
-        "nextNode": "barelywine"
-      }
-    ]
-  }, {
-    "id": "coldHoppy",
-    "text": "Do you want something with hops?",
-    "prevNode": "winterNight",
-    "options": [
-      {
-        "text": "For sure",
-        "nextNode": "ipa"
-      }, {
-        "text": "Not a big hops fan",
-        "nextNode": "warheads"
-      }
-    ]
-  }, {
-    "id": "warheads",
-    "text": "Do you like Warheads candy?",
-    "prevNode": "coldHoppy",
-    "options": [
-      {
-        "text": "I love them",
-        "nextNode": "sour"
-      }, {
-        "text": "I hate sour stuff",
-        "nextNode": "warheadHops"
-      }
-    ]
-  }, {
-    "id": "warheadHops",
-    "text": "Hops ok?",
-    "prevNode": "warheads",
-    "options": [
-      {
-        "text": "Bring 'em on'",
-        "nextNode": "pale"
-      }, {
-        "text": "No thanks",
-        "nextNode": "porterStout"
-      }
-    ]
-  }, {
-    "id": "pilsner",
-    "text": "Pilsner",
-    "prevNode": null,
-    "options": null
-  }, {
-    "id": "wheatBeer",
-    "text": "Wheat Beer",
-    "prevNode": null,
-    "options": null
-  }, {
-    "id": "farmhouse",
-    "text": "Farmhouse/Saison",
-    "prevNode": null,
-    "options": null
-  }, {
-    "id": "porterStout",
-    "text": "Porter or Stout",
-    "prevNode": null,
-    "options": null
-  }, {
-    "id": "paleAle",
-    "text": "Pale Ale",
-    "prevNode": null,
-    "options": null
-  }, {
-    "id": "ipa",
-    "text": "IPA",
-    "prevNode": null,
-    "options": null
-  }, {
-    "id": "agedStout",
-    "text": "Barrel Aged Stout",
-    "prevNode": null,
-    "options": null
-  }, {
-    "id": "sour",
-    "text": "Sour Beer",
-    "prevNode": null,
-    "options": null
-  }, {
-    "id": "barelywine",
-    "text": "Barleywine",
-    "prevNode": null,
-    "options": null
-  }
-];
-
-//select id is the current select, id is the index of the selected option
-//pass in null for starting position
-function generateSelect(selectId, id) {
-  //console.log(selectId + " : " + id);
-
-  //first check to see if there are any child nodes
-  var curr = document.getElementById(selectId);
-  console.log(document.getElementById('body').lastChild);
-  if(document.getElementById('body').lastChild != curr){
-    //console.log("not last");
-  }
-  
-  if (id != null) {
+//get the next object from the data and call createDiv
+// params - the id of the current select field and the index of the selected option
+function getNext(selectId, id){
+  var next;
+  if(selectId === 'begin'){
+    next = data[0];
+  } else {
     //get the id for the next node
     let nextId;
     for (let i = 0; i < data.length; i++) {
@@ -307,62 +13,57 @@ function generateSelect(selectId, id) {
         break;
       }
     }
-    //console.log(nextId);
-
     //get the next data item
-    let next;
     for (let i = 0; i < data.length; i++) {
       if (data[i].id === nextId) {
         next = data[i];
         break;
       }
     }
-    //console.log(next);
-    let header = document.createElement('h2');
-    header.appendChild(document.createTextNode(next.text));
-    document.getElementById('body').appendChild(header);
-    if(next.options != null){
-      let select = document.createElement('select');
-      select.setAttribute('id', next.id);
-      let def = document.createElement('option');
-      def.appendChild(document.createTextNode('-------------'));
-      def.setAttribute('value', null);
-      select.appendChild(def);
-      for (let i = 0; i < next.options.length; i++) {
-        let option = document.createElement('option');
-        option.appendChild(document.createTextNode(next.options[i].text));
-        option.setAttribute('value', i);
-        select.appendChild(option)
-      }
-      select.setAttribute('onchange', 'generateSelect(this.id, this.value)');
-      document.getElementById('body').appendChild(select);
+  }
+  //console.log(next);
+  removeChildren(selectId);
+  createDiv(next);
+}
+
+//creates the select based off of the passed in data
+//params - the object to render from data.js
+function createDiv(next) {
+  let header = document.createElement('h2');
+  header.setAttribute('class', next.id);
+  header.appendChild(document.createTextNode(next.text));
+  document.getElementById('body').appendChild(header);
+  if (next.options != null) {
+    let select = document.createElement('select');
+    select.setAttribute('id', next.id);
+    let def = document.createElement('option');
+    def.appendChild(document.createTextNode('-------------'));
+    def.setAttribute('value', null);
+    select.appendChild(def);
+    for (let i = 0; i < next.options.length; i++) {
+      let option = document.createElement('option');
+      option.appendChild(document.createTextNode(next.options[i].text));
+      option.setAttribute('value', i);
+      select.appendChild(option)
     }
+    select.setAttribute('onchange', 'getNext(this.id, this.value)');
+    document.getElementById('body').appendChild(select);
   }
 }
 
-function init() {
-  //create div to hold first select field
-  //let start = document.createElement('div');
-  let ques = document.createElement('h2');
-  ques.appendChild(document.createTextNode(data[0].text));
-  //start.appendChild(ques);
-  let select = document.createElement('select');
-  select.setAttribute('id', data[0].id);
-  let def = document.createElement('option');
-  def.appendChild(document.createTextNode('-------------'));
-  def.setAttribute('value', null);
-  select.appendChild(def);
-  for (let i = 0; i < data[0].options.length; i++) {
-    //create the option
-    let option = document.createElement('option');
-    //set value to the index of the option
-    option.setAttribute('value', i);
-    option.appendChild(document.createTextNode(data[0].options[i].text));
-    select.appendChild(option);
+function removeChildren(selectId){
+  //get array of all nodes in body
+  var nodes = document.getElementById('body').childNodes;
+  var foundIt = false;
+  //loop through backwards
+  for(let i = nodes.length; i > 0; i--){
+    if(i != nodes.length){
+      //if the id doesn't match and we haven't reached the current node, remove
+      if(nodes[i].id != selectId && foundIt == false){
+        document.getElementById('body').removeChild(nodes[i]);
+      } else {
+        foundIt = true;
+      }
+    }
   }
-  //pass the index of the option to the function so that we can grab the nextNode
-  select.setAttribute('onchange', 'generateSelect(this.id, this.value)');
-  //start.appendChild(select);
-  document.getElementById('body').appendChild(ques);
-  document.getElementById('body').appendChild(select);
 }
