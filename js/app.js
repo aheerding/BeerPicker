@@ -7,15 +7,18 @@ if(document.cookie != ""){
 } else {
   console.log('no cookies exist');
 }*/
-
+var firstcheck = false;
 //see if local storage exists
-if (!ie7) {
-  if (localStorage.getItem('beers') === null) {
-    var beers = [];
-    localStorage.setItem('beers', JSON.stringify(beers));
+function checkLocalStorage(){
+  if (!ie7) {
+    if (localStorage.getItem('beers') === null) {
+      var beers = [];
+      localStorage.setItem('beers', JSON.stringify(beers));
+    }
+    //show favorites
+    showFavorites(JSON.parse(localStorage.getItem("beers")), localStorage.getItem("name"));
   }
-  //show favorites
-  showFavorites(JSON.parse(localStorage.getItem("beers")), localStorage.getItem("name"));
+
 }
 
 function showFavorites(faves, name) {
@@ -50,6 +53,10 @@ function getCookies() {
 //get the next object from the data and call createDiv
 // params - the id of the current select field and the index of the selected option
 function getNext(selectId, id) {
+  if(firstcheck == false){
+    checkLocalStorage();
+    firstcheck = true;
+  }
   var next;
   if (selectId === 'begin') {
     next = data[0];
@@ -98,7 +105,13 @@ function createDiv(next) {
       select.appendChild(option)
     }
     if (ie7) {
-      select.setAttribute('onchange', getNext(this.id, this.value));
+      //select.setAttribute('onchange', getNext(this.id, this.value));
+      var id = select.id;
+      var value = select.value;
+      console.log(id);
+      console.log(value);
+
+      select.attachEvent('onclick', function(){getNext(id, value);});
     } else {
       select.setAttribute('onchange', 'getNext(this.id, this.value)');
     }
@@ -112,7 +125,6 @@ function createDiv(next) {
 function saveRecommend() {
   if (localStorage.getItem('name') === null && document.getElementById('name').value ==='') {
     alert("Please enter your name.");
-    console.log(document.getElementById('name').value);
   } else {
     var id = document.getElementById('body').lastChild.id;
     var beerName;
@@ -143,7 +155,6 @@ function saveRecommend() {
         localStorage.setItem('name', document.getElementById('name').value);
       }
       var name = localStorage.getItem('name');
-      console.log('name');
       showFavorites(list, name);
       //console.log(list);
     }
@@ -190,7 +201,9 @@ function addRec(id) {
   rec.appendChild(par);
   document.getElementById('form').appendChild(saveButt);
   document.getElementById('body').appendChild(rec);
-  callFade(rec);
+  if(!ie7){
+      callFade(rec);
+  }
 }
 
 function removeChildren(selectId) {
@@ -215,9 +228,11 @@ function removeChildren(selectId) {
 
 //slide in the next item
 function callFade(item) {
+  if(!ie7){
   item.style.opacity = 0;
   item.style.display = 'block';
   fade(item);
+}
 }
 
 function fade(item) {
