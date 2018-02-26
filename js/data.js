@@ -29,7 +29,7 @@ data = [
     ]
   }, {
     "id": "amerMacroLager",
-    "text": "American Macro Lager",
+    "text": "Go with an american macro lager",
     "prevNode": "careAboutTaste",
     "options": null
   }, {
@@ -198,7 +198,7 @@ data = [
         "nextNode": "agedStout"
       }, {
         "text": "I'm not really a coffee person",
-        "nextNode": "barelywine"
+        "nextNode": "barleywine"
       }
     ]
   }, {
@@ -242,48 +242,92 @@ data = [
     ]
   }, {
     "id": "pilsner",
-    "text": "Pilsner",
+    "text": "Try a pilsner!",
     "prevNode": null,
     "options": null
   }, {
     "id": "wheatBeer",
-    "text": "Wheat Beer",
+    "text": "How about a wheat Beer?",
     "prevNode": null,
     "options": null
   }, {
     "id": "farmhouse",
-    "text": "Farmhouse/Saison",
+    "text": "You should go with a Farmhouse/Saison!",
     "prevNode": null,
     "options": null
   }, {
     "id": "porterStout",
-    "text": "Porter or Stout",
+    "text": "Sounds like a porter or stout would be good!",
     "prevNode": null,
     "options": null
   }, {
     "id": "paleAle",
-    "text": "Pale Ale",
+    "text": "Today's a good day for a pale ale!",
     "prevNode": null,
     "options": null
   }, {
     "id": "ipa",
-    "text": "IPA",
+    "text": "Try an IPA!",
     "prevNode": null,
     "options": null
   }, {
     "id": "agedStout",
-    "text": "Barrel Aged Stout",
+    "text": "You could use a barrel aged stout",
     "prevNode": null,
     "options": null
   }, {
     "id": "sour",
-    "text": "Sour Beer",
+    "text": "You might like a sour beer",
     "prevNode": null,
     "options": null
   }, {
-    "id": "barelywine",
-    "text": "Barleywine",
+    "id": "barleywine",
+    "text": "A barleywine would be a good choice!",
     "prevNode": null,
     "options": null
   }
 ];
+
+var recommendations = [
+  {
+    "id": "amerMacroLager",
+    "text": "Bud Light",
+    "brewery": "Anheuser-Busch"
+  }, {
+    "id": "pilsner",
+    "text": "Pikeland Pils",
+    "brewery": "Sly Fox Brewing"
+  }, {
+    "id": "wheatBeer",
+    "text": "Witte",
+    "brewery": "Ommegang Brewing"
+  }, {
+    "id": "farmhouse",
+    "text": "Hennepin",
+    "brewery": "Ommegang Brewing"
+  }, {
+    "id": "porterStout",
+    "text": "Java Head Stout",
+    "brewery": "Troegs Brewing"
+  }, {
+    "id": "paleAle",
+    "text": "Arctic Pale Ale",
+    "brewery": "Einstok Olgerd Brewing"
+  }, {
+    "id": "ipa",
+    "text": "120 Minute IPA ",
+    "brewery": "Dogfish Head"
+  }, {
+    "id": "agedStout",
+    "text": "Brooklyn Black Ops",
+    "brewery": "Brooklyn Brewing"
+  }, {
+    "id": "sour",
+    "text": "Westbrook Gose",
+    "brewery": "Westbrook Brewing"
+  }, {
+    "id": "barleywine",
+    "text": "Y2K Two Year Vintage",
+    "brewery": "Central Waters Brewing Co."
+  }
+]
